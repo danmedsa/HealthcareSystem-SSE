@@ -20,5 +20,5 @@
     - First right-click HealthcareSystemWS and hit 'Refresh...'
 
 # How to Run
-  - Right-click HealthcareSystemWSApplication and select'Deploy'
+  - Right-click HealthcareSystemWSApplication and select 'Deploy'
   - Right-click HealthcareSystemJSP and select 'Run'
