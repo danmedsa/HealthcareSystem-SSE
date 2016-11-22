@@ -18,3 +18,7 @@
   - Create New WebService Methods (https://youtu.be/BEYnlh78TQ4?t=175)
   - Add Methods to JSP (https://youtu.be/BEYnlh78TQ4?t=639)
     - First right-click HealthcareSystemWS and hit 'Refresh...'
+
+# How to Run
+  - Right-click HealthcareSystemWSApplication and select'Deploy'
+  - Right-click HealthcareSystemJSP and select 'Run'
