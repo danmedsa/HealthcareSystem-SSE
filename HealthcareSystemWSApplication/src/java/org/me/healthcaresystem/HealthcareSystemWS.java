@@ -19,7 +19,7 @@ public class HealthcareSystemWS {
     @WebMethod(operationName = "signIn")
     public String signIn(@WebParam(name = "username") String username, @WebParam(name = "password") String password) {
         //TODO Sign in logic
-        return "Implement Log in Logic";
+        return "Implement business logic";
     }
 
     /**
