@@ -25,6 +25,8 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _SignIn_QNAME = new QName("http://healthcaresystem.me.org/", "signIn");
+    private final static QName _SignOut_QNAME = new QName("http://healthcaresystem.me.org/", "SignOut");
+    private final static QName _SignOutResponse_QNAME = new QName("http://healthcaresystem.me.org/", "SignOutResponse");
     private final static QName _SignInResponse_QNAME = new QName("http://healthcaresystem.me.org/", "signInResponse");
 
     /**
@@ -32,6 +34,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link SignOut }
+     * 
+     */
+    public SignOut createSignOut() {
+        return new SignOut();
     }
 
     /**
@@ -51,12 +61,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SignOutResponse }
+     * 
+     */
+    public SignOutResponse createSignOutResponse() {
+        return new SignOutResponse();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SignIn }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "signIn")
     public JAXBElement<SignIn> createSignIn(SignIn value) {
         return new JAXBElement<SignIn>(_SignIn_QNAME, SignIn.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SignOut }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "SignOut")
+    public JAXBElement<SignOut> createSignOut(SignOut value) {
+        return new JAXBElement<SignOut>(_SignOut_QNAME, SignOut.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SignOutResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "SignOutResponse")
+    public JAXBElement<SignOutResponse> createSignOutResponse(SignOutResponse value) {
+        return new JAXBElement<SignOutResponse>(_SignOutResponse_QNAME, SignOutResponse.class, null, value);
     }
 
     /**

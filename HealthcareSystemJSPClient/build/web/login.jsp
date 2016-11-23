@@ -14,7 +14,17 @@
     <body>
         <h1>Healthcare System</h1>
         <h2>by Fantastic Four</h2> 
-            <%-- start web service invocation --%><hr/>
+        <hr/>
+        <FORM NAME="signIn" ACTION="main.jsp" METHOD="POST">
+            username: 
+            <INPUT TYPE="TEXT" NAME="username">
+            <BR>
+            password:  
+            <INPUT TYPE="TEXT" NAME="password">
+            <BR>
+            <INPUT TYPE="SUBMIT" value="Sign-in">
+        </FORM>
+            <%-- start web service invocation --%>
         <%
         try {
             org.me.healthcaresystem.HealthcareSystemWS_Service service = new org.me.healthcaresystem.HealthcareSystemWS_Service();

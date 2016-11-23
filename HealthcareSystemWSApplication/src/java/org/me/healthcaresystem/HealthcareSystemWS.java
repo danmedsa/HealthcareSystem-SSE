@@ -21,4 +21,13 @@ public class HealthcareSystemWS {
         //TODO Sign in logic
         return "Implement Log in Logic";
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "SignOut")
+    public Boolean SignOut() {
+        //TODO write your implementation code here:
+        return null;
+    }
 }

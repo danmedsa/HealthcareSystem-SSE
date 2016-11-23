@@ -42,4 +42,16 @@ public interface HealthcareSystemWS {
         @WebParam(name = "password", targetNamespace = "")
         String password);
 
+    /**
+     * 
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod(operationName = "SignOut")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "SignOut", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.SignOut")
+    @ResponseWrapper(localName = "SignOutResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.SignOutResponse")
+    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/SignOutRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/SignOutResponse")
+    public Boolean signOut();
+
 }

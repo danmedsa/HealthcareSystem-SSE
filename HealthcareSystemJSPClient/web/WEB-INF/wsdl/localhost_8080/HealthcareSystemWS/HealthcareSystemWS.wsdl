@@ -10,15 +10,34 @@
 <message name="signInResponse">
 <part name="parameters" element="tns:signInResponse"/>
 </message>
+<message name="SignOut">
+<part name="parameters" element="tns:SignOut"/>
+</message>
+<message name="SignOutResponse">
+<part name="parameters" element="tns:SignOutResponse"/>
+</message>
 <portType name="HealthcareSystemWS">
 <operation name="signIn">
 <input wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/signInRequest" message="tns:signIn"/>
 <output wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/signInResponse" message="tns:signInResponse"/>
 </operation>
+<operation name="SignOut">
+<input wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/SignOutRequest" message="tns:SignOut"/>
+<output wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/SignOutResponse" message="tns:SignOutResponse"/>
+</operation>
 </portType>
 <binding name="HealthcareSystemWSPortBinding" type="tns:HealthcareSystemWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="signIn">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="SignOut">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
