@@ -25,8 +25,10 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _SignIn_QNAME = new QName("http://healthcaresystem.me.org/", "signIn");
+    private final static QName _ValidateCardResponse_QNAME = new QName("http://healthcaresystem.me.org/", "validateCardResponse");
     private final static QName _SignOut_QNAME = new QName("http://healthcaresystem.me.org/", "SignOut");
     private final static QName _SignOutResponse_QNAME = new QName("http://healthcaresystem.me.org/", "SignOutResponse");
+    private final static QName _ValidateCard_QNAME = new QName("http://healthcaresystem.me.org/", "validateCard");
     private final static QName _SignInResponse_QNAME = new QName("http://healthcaresystem.me.org/", "signInResponse");
 
     /**
@@ -45,6 +47,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ValidateCardResponse }
+     * 
+     */
+    public ValidateCardResponse createValidateCardResponse() {
+        return new ValidateCardResponse();
+    }
+
+    /**
      * Create an instance of {@link SignIn }
      * 
      */
@@ -58,6 +68,14 @@ public class ObjectFactory {
      */
     public SignInResponse createSignInResponse() {
         return new SignInResponse();
+    }
+
+    /**
+     * Create an instance of {@link ValidateCard }
+     * 
+     */
+    public ValidateCard createValidateCard() {
+        return new ValidateCard();
     }
 
     /**
@@ -78,6 +96,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ValidateCardResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "validateCardResponse")
+    public JAXBElement<ValidateCardResponse> createValidateCardResponse(ValidateCardResponse value) {
+        return new JAXBElement<ValidateCardResponse>(_ValidateCardResponse_QNAME, ValidateCardResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SignOut }{@code >}}
      * 
      */
@@ -93,6 +120,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "SignOutResponse")
     public JAXBElement<SignOutResponse> createSignOutResponse(SignOutResponse value) {
         return new JAXBElement<SignOutResponse>(_SignOutResponse_QNAME, SignOutResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ValidateCard }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "validateCard")
+    public JAXBElement<ValidateCard> createValidateCard(ValidateCard value) {
+        return new JAXBElement<ValidateCard>(_ValidateCard_QNAME, ValidateCard.class, null, value);
     }
 
     /**

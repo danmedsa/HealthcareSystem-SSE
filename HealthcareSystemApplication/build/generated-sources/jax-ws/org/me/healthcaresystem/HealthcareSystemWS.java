@@ -26,18 +26,6 @@ public interface HealthcareSystemWS {
 
     /**
      * 
-     * @return
-     *     returns java.lang.Boolean
-     */
-    @WebMethod(operationName = "SignOut")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "SignOut", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.SignOut")
-    @ResponseWrapper(localName = "SignOutResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.SignOutResponse")
-    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/SignOutRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/SignOutResponse")
-    public Boolean signOut();
-
-    /**
-     * 
      * @param password
      * @param username
      * @return
@@ -53,5 +41,38 @@ public interface HealthcareSystemWS {
         String username,
         @WebParam(name = "password", targetNamespace = "")
         String password);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod(operationName = "SignOut")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "SignOut", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.SignOut")
+    @ResponseWrapper(localName = "SignOutResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.SignOutResponse")
+    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/SignOutRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/SignOutResponse")
+    public Boolean signOut();
+
+    /**
+     * 
+     * @param cvv
+     * @param cardNumber
+     * @param expDate
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "validateCard", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.ValidateCard")
+    @ResponseWrapper(localName = "validateCardResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.ValidateCardResponse")
+    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/validateCardRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/validateCardResponse")
+    public Boolean validateCard(
+        @WebParam(name = "cardNumber", targetNamespace = "")
+        String cardNumber,
+        @WebParam(name = "expDate", targetNamespace = "")
+        String expDate,
+        @WebParam(name = "CVV", targetNamespace = "")
+        String cvv);
 
 }

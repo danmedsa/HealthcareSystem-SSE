@@ -30,4 +30,54 @@ public class HealthcareSystemWS {
         //TODO write your implementation code here:
         return null;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "validateCard")
+    public Boolean validateCard(@WebParam(name = "cardNumber") String cardNumber, @WebParam(name = "expDate") String expDate, @WebParam(name = "CVV") String CVV) {
+        //TODO write your implementation code here:
+        Security sec = new Security();
+        String cardNumber_dec = sec.decrypt(cardNumber);
+        String expDate_dec = sec.decrypt(expDate);
+        String CVV_dec = sec.decrypt(CVV);
+        
+        if(cardNumber.length() != 12){
+            System.out.print("Error with Card Number");
+            return false;
+        }
+        
+        if(expDate_dec.charAt(2) != '/') {
+            System.out.print("Error 1 with Expiration Date: " + expDate_dec.charAt(0) + expDate_dec.charAt(1));
+            return false;
+        }
+        if(expDate_dec.length() != 5){
+            System.out.print("Error 2 with Expiration Date: " + expDate_dec.charAt(0) + expDate_dec.charAt(1));
+            return false;
+        }
+        
+        
+        if(expDate_dec.charAt(0) == '1'){
+            if(expDate_dec.charAt(1) > '2' ){
+                System.out.print("Error 3 with Expiration Date: " + expDate_dec.charAt(0) + expDate_dec.charAt(1));
+            return false;
+            }         
+        }
+        
+        if(expDate_dec.charAt(0) == '0'){
+                if(expDate_dec.charAt(1) == '0'){
+                    System.out.print("Error 4 with Expiration Date: " + expDate_dec.charAt(0) + expDate_dec.charAt(1));
+                    return false;
+                }
+        }
+        
+        
+        
+        if(CVV.length() != 3){
+            System.out.print("Error with CVV");
+            return false;
+        }
+        
+        return true;
+    }
 }

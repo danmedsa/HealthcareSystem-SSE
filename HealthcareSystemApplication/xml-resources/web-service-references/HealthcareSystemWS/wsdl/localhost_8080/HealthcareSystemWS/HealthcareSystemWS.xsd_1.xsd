@@ -8,6 +8,10 @@
 
 <xs:element name="signInResponse" type="tns:signInResponse"/>
 
+<xs:element name="validateCard" type="tns:validateCard"/>
+
+<xs:element name="validateCardResponse" type="tns:validateCardResponse"/>
+
 <xs:complexType name="signIn">
 <xs:sequence>
 <xs:element name="username" type="xs:string" minOccurs="0"/>
@@ -26,6 +30,20 @@
 </xs:complexType>
 
 <xs:complexType name="SignOutResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validateCard">
+<xs:sequence>
+<xs:element name="cardNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="expDate" type="xs:string" minOccurs="0"/>
+<xs:element name="CVV" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validateCardResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>

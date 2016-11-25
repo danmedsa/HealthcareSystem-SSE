@@ -1,22 +1,22 @@
-package healthcaresystemapplication;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package healthcaresystemapplication;
 
 /**
  *
  * @author DanielMedina
  */
-public class HealthcareSystemMainMenuGUI extends javax.swing.JFrame {
-
+public class cardPopup extends javax.swing.JFrame {
     /**
-     * Creates new form HealthcareSystemMainMenu
+     * Creates new form cardPopup
+     * @param status
      */
-    public HealthcareSystemMainMenuGUI() {
+    public cardPopup(String msg) {
         initComponents();
+        cardStatus.setText(msg);
     }
 
     /**
@@ -28,14 +28,15 @@ public class HealthcareSystemMainMenuGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        payments_btn = new javax.swing.JButton();
+        cardStatus = new javax.swing.JLabel();
+        accept_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        payments_btn.setText("Payments");
-        payments_btn.addActionListener(new java.awt.event.ActionListener() {
+        accept_btn.setText("accept");
+        accept_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                payments_btnActionPerformed(evt);
+                accept_btnActionPerformed(evt);
             }
         });
 
@@ -44,25 +45,32 @@ public class HealthcareSystemMainMenuGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(payments_btn)
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(cardStatus)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 447, Short.MAX_VALUE)
+                .addComponent(accept_btn)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(payments_btn)
-                .addContainerGap(256, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(cardStatus))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(accept_btn)))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void payments_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payments_btnActionPerformed
+    private void accept_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accept_btnActionPerformed
         // TODO add your handling code here:
-        new HealthcareSystemPaymentGUI().setVisible(true);
-    }//GEN-LAST:event_payments_btnActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_accept_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,26 +89,28 @@ public class HealthcareSystemMainMenuGUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HealthcareSystemMainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cardPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HealthcareSystemMainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cardPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HealthcareSystemMainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cardPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HealthcareSystemMainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cardPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new HealthcareSystemMainMenuGUI().setVisible(true);
+                
             }
+               
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton payments_btn;
+    private javax.swing.JButton accept_btn;
+    private javax.swing.JLabel cardStatus;
     // End of variables declaration//GEN-END:variables
 }
