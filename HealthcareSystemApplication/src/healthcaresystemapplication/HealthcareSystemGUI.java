@@ -99,12 +99,14 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
     private void signIn_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signIn_btnActionPerformed
         // TODO add your handling code here:
        if(signIn(username_txt.getText(),password_txt.getText()).equals("Success")){
-           
+           System.out.println(signIn(username_txt.getText(),password_txt.getText()));
+            this.setVisible(false);
+            new HealthcareSystemMainMenuGUI().setVisible(true);
+       }else{
+           new cardPopup("No user found!");
        }
        
-       System.out.println(signIn(username_txt.getText(),password_txt.getText()));
-       this.setVisible(false);
-       new HealthcareSystemMainMenuGUI().setVisible(true);
+       
     }//GEN-LAST:event_signIn_btnActionPerformed
 
     /**

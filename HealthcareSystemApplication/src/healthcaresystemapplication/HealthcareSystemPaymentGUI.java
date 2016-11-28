@@ -270,6 +270,7 @@ public class HealthcareSystemPaymentGUI extends javax.swing.JFrame {
     private void payment_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payment_btnActionPerformed
         // TODO add your handling code here:
         Security sec = new Security();
+        
         if(card_num_txt.getText().length() > 0 || exp_date_txt.getText().length() > 0 || cvv_txt.getText().length() > 0){
             String card_num_enc = sec.encrypt(card_num_txt.getText());
             String exp_date_enc = sec.encrypt(exp_date_txt.getText());
