@@ -2,4 +2,10 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/HealthcareSystemWS/HealthcareSystemWS?wsdl" uri="wsdl/localhost_8080/HealthcareSystemWS/HealthcareSystemWS.wsdl"/>
     <system systemId="http://localhost:8080/HealthcareSystemWS/HealthcareSystemWS?xsd=1" uri="wsdl/localhost_8080/HealthcareSystemWS/HealthcareSystemWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/CreateAcc/CreateAcc?wsdl" uri="wsdl/localhost_8080/CreateAcc/CreateAcc.wsdl"/>
+    <system systemId="http://localhost:8080/CreateAcc/CreateAcc?xsd=1" uri="wsdl/localhost_8080/CreateAcc/CreateAcc.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Login/Login?wsdl" uri="wsdl/localhost_8080/Login/Login.wsdl"/>
+    <system systemId="http://localhost:8080/Login/Login?xsd=1" uri="wsdl/localhost_8080/Login/Login.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/MedicalRec/AccessMedRec?wsdl" uri="wsdl/localhost_8080/MedicalRec/AccessMedRec.wsdl"/>
+    <system systemId="http://localhost:8080/MedicalRec/AccessMedRec?xsd=1" uri="wsdl/localhost_8080/MedicalRec/AccessMedRec.xsd_1.xsd"/>
 </catalog>

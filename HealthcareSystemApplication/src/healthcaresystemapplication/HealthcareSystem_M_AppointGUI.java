@@ -27,24 +27,20 @@ public class HealthcareSystem_M_AppointGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        Username_txt = new javax.swing.JTextField();
         Submit = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        Month_txt = new javax.swing.JComboBox<>();
-        Date_txt = new javax.swing.JComboBox<>();
-        Time_txt = new javax.swing.JComboBox<>();
+        Month_txt = new javax.swing.JComboBox<String>();
+        Date_txt = new javax.swing.JComboBox<String>();
+        Time_txt = new javax.swing.JComboBox<String>();
         jLabel6 = new javax.swing.JLabel();
-        Year_txt = new javax.swing.JComboBox<>();
+        Year_txt = new javax.swing.JComboBox<String>();
         Cancel = new javax.swing.JButton();
-        Doctor_txt = new javax.swing.JComboBox<>();
+        Doctor_txt = new javax.swing.JComboBox<String>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("Username:");
 
         jLabel2.setText("Month:");
 
@@ -61,15 +57,15 @@ public class HealthcareSystem_M_AppointGUI extends javax.swing.JFrame {
 
         jLabel5.setText("Time:");
 
-        Month_txt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        Month_txt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        Date_txt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        Date_txt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        Time_txt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00" }));
+        Time_txt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00" }));
 
         jLabel6.setText("Year:");
 
-        Year_txt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2016", "2017", "2018" }));
+        Year_txt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2016", "2017", "2018" }));
 
         Cancel.setText("Cancel");
         Cancel.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +74,7 @@ public class HealthcareSystem_M_AppointGUI extends javax.swing.JFrame {
             }
         });
 
-        Doctor_txt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Byungkwan Jung", "Nikitha Mahesh", "Daniel Medina Sada", "Sonali Sen-Baidya" }));
+        Doctor_txt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Byungkwan Jung", "Nikitha Mahesh", "Daniel Medina Sada", "Sonali Sen-Baidya" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,24 +91,19 @@ public class HealthcareSystem_M_AppointGUI extends javax.swing.JFrame {
                                 .addComponent(Year_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(49, 49, 49)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(44, 44, 44)
-                                                .addComponent(Month_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Date_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(Username_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(44, 44, 44)
+                                        .addComponent(Month_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Date_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -128,11 +119,7 @@ public class HealthcareSystem_M_AppointGUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(Username_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(118, 118, 118)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(Doctor_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -148,7 +135,7 @@ public class HealthcareSystem_M_AppointGUI extends javax.swing.JFrame {
                         .addComponent(Date_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5)
                         .addComponent(Time_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Submit)
                     .addComponent(Cancel))
@@ -161,8 +148,8 @@ public class HealthcareSystem_M_AppointGUI extends javax.swing.JFrame {
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
         try{
-            
-            String username = Username_txt.getText();
+            Session session = Session.getInstance();
+            String username = session.getUsername();
             String Doctor =  (String) Doctor_txt.getSelectedItem();
             String year =  (String)Year_txt.getSelectedItem();
             String month =  (String)  Month_txt.getSelectedItem();
@@ -171,8 +158,8 @@ public class HealthcareSystem_M_AppointGUI extends javax.swing.JFrame {
             String wholetime = year+"-"+Time;
             String wholedate = month+"/"+Date+"/"+year;
             Security sec = new Security();
-            if(Username_txt.getText().length() > 0 || Doctor.length() > 0 || wholedate.length()> 0 || wholetime.length()> 0 ){
-                String Username_txt_enc = sec.encrypt(Username_txt.getText());
+            if(session.getUsername().length() > 0 || Doctor.length() > 0 || wholedate.length()> 0 || wholetime.length()> 0 ){
+                String Username_txt_enc = sec.encrypt(session.getUsername());
                 String Doctor_txt_enc = sec.encrypt(Doctor);
                 String wholedate_enc = sec.encrypt(wholedate);
                 String wholetime_enc = sec.encrypt(wholetime);
@@ -183,6 +170,8 @@ public class HealthcareSystem_M_AppointGUI extends javax.swing.JFrame {
                 if(response.equals("Success"))
                 {
                       new cardPopup("Appointment Reserved").setVisible(true);
+                      this.dispose();
+
                 }
                 else if(response.equals("Invalid"))
                 {
@@ -265,9 +254,7 @@ public class HealthcareSystem_M_AppointGUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Month_txt;
     private javax.swing.JButton Submit;
     private javax.swing.JComboBox<String> Time_txt;
-    private javax.swing.JTextField Username_txt;
     private javax.swing.JComboBox<String> Year_txt;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

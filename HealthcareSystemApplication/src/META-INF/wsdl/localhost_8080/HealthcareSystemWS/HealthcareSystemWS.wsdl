@@ -34,6 +34,30 @@
 <message name="genUniqueIDResponse">
 <part name="parameters" element="tns:genUniqueIDResponse"/>
 </message>
+<message name="quotate">
+<part name="parameters" element="tns:quotate"/>
+</message>
+<message name="quotateResponse">
+<part name="parameters" element="tns:quotateResponse"/>
+</message>
+<message name="CANing">
+<part name="parameters" element="tns:CANing"/>
+</message>
+<message name="CANingResponse">
+<part name="parameters" element="tns:CANingResponse"/>
+</message>
+<message name="Adding">
+<part name="parameters" element="tns:Adding"/>
+</message>
+<message name="AddingResponse">
+<part name="parameters" element="tns:AddingResponse"/>
+</message>
+<message name="MODing">
+<part name="parameters" element="tns:MODing"/>
+</message>
+<message name="MODingResponse">
+<part name="parameters" element="tns:MODingResponse"/>
+</message>
 <portType name="HealthcareSystemWS">
 <operation name="checkRepudiation">
 <input wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/checkRepudiationRequest" message="tns:checkRepudiation"/>
@@ -54,6 +78,22 @@
 <operation name="genUniqueID">
 <input wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/genUniqueIDRequest" message="tns:genUniqueID"/>
 <output wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/genUniqueIDResponse" message="tns:genUniqueIDResponse"/>
+</operation>
+<operation name="quotate">
+<input wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/quotateRequest" message="tns:quotate"/>
+<output wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/quotateResponse" message="tns:quotateResponse"/>
+</operation>
+<operation name="CANing">
+<input wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/CANingRequest" message="tns:CANing"/>
+<output wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/CANingResponse" message="tns:CANingResponse"/>
+</operation>
+<operation name="Adding">
+<input wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/AddingRequest" message="tns:Adding"/>
+<output wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/AddingResponse" message="tns:AddingResponse"/>
+</operation>
+<operation name="MODing">
+<input wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/MODingRequest" message="tns:MODing"/>
+<output wsam:Action="http://healthcaresystem.me.org/HealthcareSystemWS/MODingResponse" message="tns:MODingResponse"/>
 </operation>
 </portType>
 <binding name="HealthcareSystemWSPortBinding" type="tns:HealthcareSystemWS">
@@ -95,6 +135,42 @@
 </output>
 </operation>
 <operation name="genUniqueID">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="quotate">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="CANing">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Adding">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="MODing">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://healthcaresystem.me.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://healthcaresystem.me.org/">
+
+<xs:element name="getMedicalRecord" type="tns:getMedicalRecord"/>
+
+<xs:element name="getMedicalRecordResponse" type="tns:getMedicalRecordResponse"/>
+
+<xs:element name="privilige1" type="tns:privilige1"/>
+
+<xs:element name="privilige1Response" type="tns:privilige1Response"/>
+
+<xs:element name="quotate" type="tns:quotate"/>
+
+<xs:element name="quotateResponse" type="tns:quotateResponse"/>
+
+<xs:element name="submit" type="tns:submit"/>
+
+<xs:element name="submitResponse" type="tns:submitResponse"/>
+
+<xs:element name="validateData" type="tns:validateData"/>
+
+<xs:element name="validateDataResponse" type="tns:validateDataResponse"/>
+
+<xs:complexType name="privilige1">
+<xs:sequence>
+<xs:element name="privilige" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="privilige1Response">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validateData">
+<xs:sequence>
+<xs:element name="doctor_visit_summary" type="xs:string" minOccurs="0"/>
+<xs:element name="lab_result" type="xs:string" minOccurs="0"/>
+<xs:element name="radiology_report" type="xs:string" minOccurs="0"/>
+<xs:element name="pathology_report" type="xs:string" minOccurs="0"/>
+<xs:element name="allergy_information" type="xs:string" minOccurs="0"/>
+<xs:element name="prescribed_medicines" type="xs:string" minOccurs="0"/>
+<xs:element name="Problem" type="xs:string" minOccurs="0"/>
+<xs:element name="Treatment" type="xs:string" minOccurs="0"/>
+<xs:element name="NurseID" type="xs:string" minOccurs="0"/>
+<xs:element name="DoctorID" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validateDataResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="quotate">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="quotateResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="submit">
+<xs:sequence>
+<xs:element name="doctor_visit_summary" type="xs:string" minOccurs="0"/>
+<xs:element name="lab_result" type="xs:string" minOccurs="0"/>
+<xs:element name="radiology_report" type="xs:string" minOccurs="0"/>
+<xs:element name="pathology_report" type="xs:string" minOccurs="0"/>
+<xs:element name="allergy_information" type="xs:string" minOccurs="0"/>
+<xs:element name="prescribed_medicines" type="xs:string" minOccurs="0"/>
+<xs:element name="Problem" type="xs:string" minOccurs="0"/>
+<xs:element name="Treatment" type="xs:string" minOccurs="0"/>
+<xs:element name="NurseID" type="xs:string" minOccurs="0"/>
+<xs:element name="DoctorID" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="submitResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMedicalRecord">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMedicalRecordResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

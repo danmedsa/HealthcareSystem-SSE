@@ -23,10 +23,21 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="payments_btn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="290" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="C_Appoint" alignment="0" max="32767" attributes="0"/>
+                  <Component id="Mod_Appoint" alignment="0" max="32767" attributes="0"/>
+                  <Component id="M_Appoint" alignment="0" max="32767" attributes="0"/>
+                  <Component id="payments_btn" max="32767" attributes="0"/>
+                  <Component id="access_record_btn" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="218" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="sign_out_btn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -35,7 +46,16 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Component id="payments_btn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="256" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="M_Appoint" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="Mod_Appoint" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="C_Appoint" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="access_record_btn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="105" max="32767" attributes="0"/>
+              <Component id="sign_out_btn" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -47,6 +67,47 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="payments_btnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="M_Appoint">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Make Appointment"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="M_AppointActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Mod_Appoint">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Modify Appointment"/>
+        <Property name="actionCommand" type="java.lang.String" value="Modify_Appointment"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Mod_AppointActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="C_Appoint">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cancel Appointment"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="C_AppointActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="access_record_btn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Access Medical Record"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="access_record_btnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="sign_out_btn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sign Out"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sign_out_btnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

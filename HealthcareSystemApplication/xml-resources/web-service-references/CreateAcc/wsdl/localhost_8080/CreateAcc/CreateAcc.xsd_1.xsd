@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://healthcaresystem.me.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://healthcaresystem.me.org/">
+
+<xs:element name="Adding" type="tns:Adding"/>
+
+<xs:element name="AddingResponse" type="tns:AddingResponse"/>
+
+<xs:element name="privilige1" type="tns:privilige1"/>
+
+<xs:element name="privilige1Response" type="tns:privilige1Response"/>
+
+<xs:element name="quotate" type="tns:quotate"/>
+
+<xs:element name="quotateResponse" type="tns:quotateResponse"/>
+
+<xs:element name="submitNewAcc" type="tns:submitNewAcc"/>
+
+<xs:element name="submitNewAccResponse" type="tns:submitNewAccResponse"/>
+
+<xs:element name="validateNewAcc" type="tns:validateNewAcc"/>
+
+<xs:element name="validateNewAccResponse" type="tns:validateNewAccResponse"/>
+
+<xs:complexType name="quotate">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="quotateResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Adding">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="doctor" type="xs:string" minOccurs="0"/>
+<xs:element name="date" type="xs:string" minOccurs="0"/>
+<xs:element name="time" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AddingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="submitNewAcc">
+<xs:sequence>
+<xs:element name="fname" type="xs:string" minOccurs="0"/>
+<xs:element name="lname" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="email1" type="xs:string" minOccurs="0"/>
+<xs:element name="add1" type="xs:string" minOccurs="0"/>
+<xs:element name="phone1" type="xs:string" minOccurs="0"/>
+<xs:element name="privilige1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="submitNewAccResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="privilige1">
+<xs:sequence>
+<xs:element name="privilige" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="privilige1Response">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validateNewAcc">
+<xs:sequence>
+<xs:element name="fname" type="xs:string" minOccurs="0"/>
+<xs:element name="lname" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="email1" type="xs:string" minOccurs="0"/>
+<xs:element name="add1" type="xs:string" minOccurs="0"/>
+<xs:element name="phone1" type="xs:string" minOccurs="0"/>
+<xs:element name="privilige1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validateNewAccResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

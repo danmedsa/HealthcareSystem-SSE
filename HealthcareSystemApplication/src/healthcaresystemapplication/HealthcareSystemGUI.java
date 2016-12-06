@@ -1,5 +1,10 @@
 package healthcaresystemapplication;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,17 +16,15 @@ package healthcaresystemapplication;
  * @author DanielMedina
  */
 public class HealthcareSystemGUI extends javax.swing.JFrame {
-
+    boolean Keylogger = false;
+    String uname = null;
     /**
      * Creates new form HealthcareSystemGUI
      */
-    
-    Boolean Keylogger = false;
-    
     public HealthcareSystemGUI() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,9 +37,10 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
         username_lbl = new javax.swing.JLabel();
         password_lbl = new javax.swing.JLabel();
         username_txt = new javax.swing.JTextField();
-        password_txt = new javax.swing.JTextField();
+        password_txt = new javax.swing.JPasswordField();
         signIn_btn = new javax.swing.JButton();
-        Keylogger_chk = new javax.swing.JCheckBox();
+        Key_Mon = new javax.swing.JCheckBox();
+        CreateAccount_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,10 +61,17 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
             }
         });
 
-        Keylogger_chk.setText("Keylogging");
-        Keylogger_chk.addActionListener(new java.awt.event.ActionListener() {
+        Key_Mon.setText("Key Monioring Active");
+        Key_Mon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Keylogger_chkActionPerformed(evt);
+                Key_MonActionPerformed(evt);
+            }
+        });
+
+        CreateAccount_btn.setText("Create Account");
+        CreateAccount_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateAccount_btnActionPerformed(evt);
             }
         });
 
@@ -69,30 +80,30 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(65, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(username_lbl)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(username_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(password_lbl)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(password_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addComponent(signIn_btn))))
+                        .addComponent(password_lbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(password_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Keylogger_chk)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                        .addGap(53, 53, 53)
+                        .addComponent(signIn_btn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(username_lbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(username_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(61, 61, 61))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(CreateAccount_btn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Key_Mon)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(username_lbl)
                     .addComponent(username_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -102,9 +113,11 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
                     .addComponent(password_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(signIn_btn)
-                .addGap(18, 18, 18)
-                .addComponent(Keylogger_chk)
-                .addGap(15, 15, 15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Key_Mon)
+                    .addComponent(CreateAccount_btn))
+                .addGap(9, 9, 9))
         );
 
         pack();
@@ -116,33 +129,176 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
 
     private void signIn_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signIn_btnActionPerformed
         // TODO add your handling code here:
-       if(signIn(username_txt.getText(),password_txt.getText()).equals("Success")){
-           System.out.println(signIn(username_txt.getText(),password_txt.getText()));
-            this.setVisible(false);
-            new HealthcareSystemMainMenuGUI().setVisible(true);
-       }else{
-           new cardPopup("No user found!");
-       }
-       
-       
+        if(Keylogger == true)
+        {
+            new cardPopup("Keystroke logging detected").setVisible(true);
+        }
+        else
+        {
+            
+            Security sec = new Security();
+            String response = signIn(sec.encrypt(username_txt.getText()),sec.encrypt(password_txt.getText()));
+            System.out.println(response+" "+sec.encrypt(username_txt.getText())+" "+sec.encrypt(password_txt.getText()));
+            
+            
+            if(response.equals("Success")){
+                System.out.println(response);
+                uname = username_txt.getText();
+                this.setVisible(false);
+                
+                Session session = Session.getInstance();
+                session.setUsername(uname);
+                
+                new HealthcareSystemMainMenuGUI().setVisible(true);
+            }else{
+                new cardPopup("No user found!").setVisible(true);
+            }
+        }      
     }//GEN-LAST:event_signIn_btnActionPerformed
 
-    private void Keylogger_chkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Keylogger_chkActionPerformed
+    private void Key_MonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Key_MonActionPerformed
         // TODO add your handling code here:
-        if(!Keylogger_chk.isSelected()){
-            System.out.println("Key Logger is off");
-        }else{
- 
-            System.out.println("Key Logger is on");
-
-        }
         
-    }//GEN-LAST:event_Keylogger_chkActionPerformed
+        if(!Key_Mon.isSelected()){
+            Keylogger = false;
+            System.out.println("Key Logger is off");
+
+
+        }else{
+            Keylogger = true;
+            System.out.println("Key Logger is on");
+             username_txt.addKeyListener(new KeyListener() {
+                     /** Handle the key typed event from the text field. */
+                     public void keyTyped(KeyEvent e) {
+                         displayInfo(e, "KEY TYPED: ");
+                     }
+                     /** Handle the key pressed event from the text field. */
+                     public void keyPressed(KeyEvent e) {
+                         displayInfo(e, "KEY PRESSED: ");
+                     }
+                     /** Handle the key released event from the text field. */
+                     public void keyReleased(KeyEvent e) {
+                         displayInfo(e, "KEY RELEASED: ");
+                     }
+                     protected void displayInfo(KeyEvent e, String s) {
+                         String keyString, modString, tmpString, actionString, locationString;
+                         // You should only rely on the key char if the event
+                         // is a key typed event.
+                         int id = e.getID();
+                         if (id == KeyEvent.KEY_TYPED) {
+                             char c = e.getKeyChar();
+                             keyString = "key character = '" + c + "'";
+                         } else {
+                             int keyCode = e.getKeyCode();
+                             keyString = "key code = " + keyCode + " (" + KeyEvent.getKeyText(keyCode) + ")";
+                         }
+                         int modifiers = e.getModifiersEx();
+                         modString = "modifiers = " + modifiers;
+                         tmpString = KeyEvent.getModifiersExText(modifiers);
+                         if (tmpString.length() > 0) {
+                             modString += " (" + tmpString + ")";
+                         } else {
+                             modString += " (no modifiers)";
+                         }
+                         actionString = "action key? ";
+                         if (e.isActionKey()) {
+                             actionString += "YES";
+                         } else {
+                             actionString += "NO";
+                         }
+                         locationString = "key location: ";
+                         int location = e.getKeyLocation();
+                         if (location == KeyEvent.KEY_LOCATION_STANDARD) {
+                             locationString += "standard";
+                         } else if (location == KeyEvent.KEY_LOCATION_LEFT) {
+                             locationString += "left";
+                         } else if (location == KeyEvent.KEY_LOCATION_RIGHT) {
+                             locationString += "right";
+                         } else if (location == KeyEvent.KEY_LOCATION_NUMPAD) {
+                             locationString += "numpad";
+                         } else { // (location == KeyEvent.KEY_LOCATION_UNKNOWN)
+                             locationString += "unknown";
+                         }
+                         System.out.println(keyString);
+                         System.out.println(modString);
+                         System.out.println(actionString);
+                         System.out.println(locationString);
+                     }   
+                 });
+                 password_txt.addKeyListener(new KeyListener() {
+                     /** Handle the key typed event from the text field. */
+                     public void keyTyped(KeyEvent e) {
+                         displayInfo(e, "KEY TYPED: ");
+                     }
+                     /** Handle the key pressed event from the text field. */
+                     public void keyPressed(KeyEvent e) {
+                         displayInfo(e, "KEY PRESSED: ");
+                     }
+                     /** Handle the key released event from the text field. */
+                     public void keyReleased(KeyEvent e) {
+                         displayInfo(e, "KEY RELEASED: ");
+                     }
+                     protected void displayInfo(KeyEvent e, String s) {
+                         String keyString, modString, tmpString, actionString, locationString;
+                         // You should only rely on the key char if the event
+                         // is a key typed event.
+                         int id = e.getID();
+                         if (id == KeyEvent.KEY_TYPED) {
+                             char c = e.getKeyChar();
+                             keyString = "key character = '" + c + "'";
+                         } else {
+                             int keyCode = e.getKeyCode();
+                             keyString = "key code = " + keyCode + " (" + KeyEvent.getKeyText(keyCode) + ")";
+                         }
+                         int modifiers = e.getModifiersEx();
+                         modString = "modifiers = " + modifiers;
+                         tmpString = KeyEvent.getModifiersExText(modifiers);
+                         if (tmpString.length() > 0) {
+                             modString += " (" + tmpString + ")";
+                         } else {
+                             modString += " (no modifiers)";
+                         }
+                         actionString = "action key? ";
+                         if (e.isActionKey()) {
+                             actionString += "YES";
+                         } else {
+                             actionString += "NO";
+                         }
+                         locationString = "key location: ";
+                         int location = e.getKeyLocation();
+                         if (location == KeyEvent.KEY_LOCATION_STANDARD) {
+                             locationString += "standard";
+                         } else if (location == KeyEvent.KEY_LOCATION_LEFT) {
+                             locationString += "left";
+                         } else if (location == KeyEvent.KEY_LOCATION_RIGHT) {
+                             locationString += "right";
+                         } else if (location == KeyEvent.KEY_LOCATION_NUMPAD) {
+                             locationString += "numpad";
+                         } else { // (location == KeyEvent.KEY_LOCATION_UNKNOWN)
+                             locationString += "unknown";
+                         }
+                         System.out.println(keyString);
+                         System.out.println(modString);
+                         System.out.println(actionString);
+                         System.out.println(locationString);
+                     }   
+                 });
+                 //aWindow.add(typingArea);
+                 //aWindow.setVisible(true);
+        }
+    }//GEN-LAST:event_Key_MonActionPerformed
+
+    private void CreateAccount_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccount_btnActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new CreateAccount().setVisible(true);
+    }//GEN-LAST:event_CreateAccount_btnActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[])
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -167,20 +323,31 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        java.awt.EventQueue.invokeLater(new Runnable()
+        {
+            
+            public void run()
+            {
                 new HealthcareSystemGUI().setVisible(true);
+                 //JFrame aWindow = new JFrame("This is the Window Title");
+                 //aWindow.setBounds(50, 100, 300, 300);
+                 //aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                 //JTextField typingArea = new JTextField(20);
+                 
+                
             }
         });
     }
-
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox Keylogger_chk;
+    private javax.swing.JButton CreateAccount_btn;
+    private javax.swing.JCheckBox Key_Mon;
     private javax.swing.JLabel password_lbl;
-    private javax.swing.JTextField password_txt;
+    private static javax.swing.JPasswordField password_txt;
     private javax.swing.JButton signIn_btn;
     private javax.swing.JLabel username_lbl;
-    private javax.swing.JTextField username_txt;
+    private static javax.swing.JTextField username_txt;
     // End of variables declaration//GEN-END:variables
 
     private static String signIn(java.lang.String username, java.lang.String password) {

@@ -33,5 +33,56 @@
         <delete dir="${build.generated.dir}/jax-wsCache/HealthcareSystemWS"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/org/me/healthcaresystem"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-HealthcareSystemWS"/>
+    <target name="wsimport-client-CreateAcc" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CreateAcc"/>
+        <property name="wsdl-CreateAcc" location="xml-resources/web-service-references/CreateAcc/wsdl/localhost_8080/CreateAcc/CreateAcc.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CreateAcc" destdir="${build.generated.dir}/jax-wsCache/CreateAcc" wsdl="${wsdl-CreateAcc}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/CreateAcc/CreateAcc?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-CreateAcc}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CreateAcc"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CreateAcc">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-CreateAcc" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/CreateAcc"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/org/me/healthcaresystem"/>
+    </target>
+    <target name="wsimport-client-Login" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Login"/>
+        <property name="wsdl-Login" location="xml-resources/web-service-references/Login/wsdl/localhost_8080/Login/Login.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Login" destdir="${build.generated.dir}/jax-wsCache/Login" wsdl="${wsdl-Login}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/Login/Login?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-Login}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Login"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Login">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Login" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Login"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/org/me/healthcaresystem"/>
+    </target>
+    <target name="wsimport-client-AccessMedRec" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AccessMedRec"/>
+        <property name="wsdl-AccessMedRec" location="xml-resources/web-service-references/AccessMedRec/wsdl/localhost_8080/MedicalRec/AccessMedRec.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AccessMedRec" destdir="${build.generated.dir}/jax-wsCache/AccessMedRec" wsdl="${wsdl-AccessMedRec}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/MedicalRec/AccessMedRec?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-AccessMedRec}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AccessMedRec"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AccessMedRec">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AccessMedRec" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/AccessMedRec"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/org/me/healthcaresystem"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-HealthcareSystemWS, wsimport-client-CreateAcc, wsimport-client-Login, wsimport-client-AccessMedRec"/>
 </project>

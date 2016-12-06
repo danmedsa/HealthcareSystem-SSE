@@ -108,4 +108,88 @@ public interface HealthcareSystemWS {
         @WebParam(name = "username", targetNamespace = "")
         String username);
 
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "quotate", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.Quotate")
+    @ResponseWrapper(localName = "quotateResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.QuotateResponse")
+    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/quotateRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/quotateResponse")
+    public String quotate(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param date
+     * @param username
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "CANing")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CANing", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.CANing")
+    @ResponseWrapper(localName = "CANingResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.CANingResponse")
+    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/CANingRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/CANingResponse")
+    public String caNing(
+        @WebParam(name = "username", targetNamespace = "")
+        String username,
+        @WebParam(name = "date", targetNamespace = "")
+        String date);
+
+    /**
+     * 
+     * @param doctor
+     * @param date
+     * @param time
+     * @param username
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "Adding")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Adding", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.Adding")
+    @ResponseWrapper(localName = "AddingResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.AddingResponse")
+    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/AddingRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/AddingResponse")
+    public String adding(
+        @WebParam(name = "username", targetNamespace = "")
+        String username,
+        @WebParam(name = "doctor", targetNamespace = "")
+        String doctor,
+        @WebParam(name = "date", targetNamespace = "")
+        String date,
+        @WebParam(name = "time", targetNamespace = "")
+        String time);
+
+    /**
+     * 
+     * @param doctor
+     * @param dateto
+     * @param datefrom
+     * @param time
+     * @param username
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "MODing")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "MODing", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.MODing")
+    @ResponseWrapper(localName = "MODingResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.MODingResponse")
+    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/MODingRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/MODingResponse")
+    public String moDing(
+        @WebParam(name = "username", targetNamespace = "")
+        String username,
+        @WebParam(name = "doctor", targetNamespace = "")
+        String doctor,
+        @WebParam(name = "datefrom", targetNamespace = "")
+        String datefrom,
+        @WebParam(name = "dateto", targetNamespace = "")
+        String dateto,
+        @WebParam(name = "time", targetNamespace = "")
+        String time);
+
 }

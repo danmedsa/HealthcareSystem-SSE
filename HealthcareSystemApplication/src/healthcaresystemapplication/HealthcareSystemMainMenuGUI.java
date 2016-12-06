@@ -29,6 +29,11 @@ public class HealthcareSystemMainMenuGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         payments_btn = new javax.swing.JButton();
+        M_Appoint = new javax.swing.JButton();
+        Mod_Appoint = new javax.swing.JButton();
+        C_Appoint = new javax.swing.JButton();
+        access_record_btn = new javax.swing.JButton();
+        sign_out_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,21 +44,75 @@ public class HealthcareSystemMainMenuGUI extends javax.swing.JFrame {
             }
         });
 
+        M_Appoint.setText("Make Appointment");
+        M_Appoint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                M_AppointActionPerformed(evt);
+            }
+        });
+
+        Mod_Appoint.setText("Modify Appointment");
+        Mod_Appoint.setActionCommand("Modify_Appointment");
+        Mod_Appoint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Mod_AppointActionPerformed(evt);
+            }
+        });
+
+        C_Appoint.setText("Cancel Appointment");
+        C_Appoint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                C_AppointActionPerformed(evt);
+            }
+        });
+
+        access_record_btn.setText("Access Medical Record");
+        access_record_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                access_record_btnActionPerformed(evt);
+            }
+        });
+
+        sign_out_btn.setText("Sign Out");
+        sign_out_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sign_out_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(payments_btn)
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(C_Appoint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Mod_Appoint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(M_Appoint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(payments_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(access_record_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(sign_out_btn)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(payments_btn)
-                .addContainerGap(256, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(M_Appoint)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Mod_Appoint)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(C_Appoint)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(access_record_btn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addComponent(sign_out_btn))
         );
 
         pack();
@@ -64,6 +123,33 @@ public class HealthcareSystemMainMenuGUI extends javax.swing.JFrame {
         new HealthcareSystemPaymentGUI().setVisible(true);
     }//GEN-LAST:event_payments_btnActionPerformed
 
+    private void M_AppointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_M_AppointActionPerformed
+        // TODO add your handling code here:
+         new HealthcareSystem_M_AppointGUI().setVisible(true);
+    }//GEN-LAST:event_M_AppointActionPerformed
+
+    private void Mod_AppointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mod_AppointActionPerformed
+        // TODO add your handling code here:
+        new HealthcareSystem_Mod_AppointGUI1().setVisible(true);
+    }//GEN-LAST:event_Mod_AppointActionPerformed
+
+    private void C_AppointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C_AppointActionPerformed
+        // TODO add your handling code here:
+        new HealthcareSystem_Can_AppointGUI1().setVisible(true);
+    }//GEN-LAST:event_C_AppointActionPerformed
+
+    private void access_record_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_access_record_btnActionPerformed
+        // TODO add your handling code here:
+        new AccessMedRec().setVisible(true);
+    }//GEN-LAST:event_access_record_btnActionPerformed
+
+    private void sign_out_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sign_out_btnActionPerformed
+        // TODO add your handling code here:
+        new HealthcareSystemGUI().setVisible(true);
+        this.dispose(); 
+    }//GEN-LAST:event_sign_out_btnActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -101,6 +187,11 @@ public class HealthcareSystemMainMenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton C_Appoint;
+    private javax.swing.JButton M_Appoint;
+    private javax.swing.JButton Mod_Appoint;
+    private javax.swing.JButton access_record_btn;
     private javax.swing.JButton payments_btn;
+    private javax.swing.JButton sign_out_btn;
     // End of variables declaration//GEN-END:variables
 }

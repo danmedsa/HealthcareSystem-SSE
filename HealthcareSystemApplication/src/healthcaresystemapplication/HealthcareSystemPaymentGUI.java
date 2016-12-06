@@ -279,7 +279,8 @@ public class HealthcareSystemPaymentGUI extends javax.swing.JFrame {
     private void payment_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payment_btnActionPerformed
         // TODO add your handling code here:
         
-        String username = "danielm";
+        Session session = Session.getInstance();
+        String username = session.getUsername();
         
         Security sec = new Security();
         switch(selected){
@@ -311,11 +312,11 @@ public class HealthcareSystemPaymentGUI extends javax.swing.JFrame {
                 break;
                 
             case "Cash":
-                new cardPopup("Please Pay with Cashier").setVisible(true);
+                new cardPopup("Invoice Has Been Sent to your Address.").setVisible(true);
                 break;
                 
             case "Check":
-                new cardPopup("Please send the Check to the Hospital").setVisible(true);
+                new cardPopup("Invoice Has Been Sent to your Address.").setVisible(true);
                 break;
         }
         
