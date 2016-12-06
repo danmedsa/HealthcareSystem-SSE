@@ -25,11 +25,15 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _SignIn_QNAME = new QName("http://healthcaresystem.me.org/", "signIn");
+    private final static QName _CheckRepudiation_QNAME = new QName("http://healthcaresystem.me.org/", "checkRepudiation");
+    private final static QName _GenUniqueIDResponse_QNAME = new QName("http://healthcaresystem.me.org/", "genUniqueIDResponse");
     private final static QName _ValidateCardResponse_QNAME = new QName("http://healthcaresystem.me.org/", "validateCardResponse");
     private final static QName _SignOut_QNAME = new QName("http://healthcaresystem.me.org/", "SignOut");
+    private final static QName _GenUniqueID_QNAME = new QName("http://healthcaresystem.me.org/", "genUniqueID");
     private final static QName _SignOutResponse_QNAME = new QName("http://healthcaresystem.me.org/", "SignOutResponse");
     private final static QName _ValidateCard_QNAME = new QName("http://healthcaresystem.me.org/", "validateCard");
     private final static QName _SignInResponse_QNAME = new QName("http://healthcaresystem.me.org/", "signInResponse");
+    private final static QName _CheckRepudiationResponse_QNAME = new QName("http://healthcaresystem.me.org/", "checkRepudiationResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.me.healthcaresystem
@@ -55,11 +59,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GenUniqueIDResponse }
+     * 
+     */
+    public GenUniqueIDResponse createGenUniqueIDResponse() {
+        return new GenUniqueIDResponse();
+    }
+
+    /**
+     * Create an instance of {@link CheckRepudiation }
+     * 
+     */
+    public CheckRepudiation createCheckRepudiation() {
+        return new CheckRepudiation();
+    }
+
+    /**
      * Create an instance of {@link SignIn }
      * 
      */
     public SignIn createSignIn() {
         return new SignIn();
+    }
+
+    /**
+     * Create an instance of {@link CheckRepudiationResponse }
+     * 
+     */
+    public CheckRepudiationResponse createCheckRepudiationResponse() {
+        return new CheckRepudiationResponse();
     }
 
     /**
@@ -87,12 +115,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GenUniqueID }
+     * 
+     */
+    public GenUniqueID createGenUniqueID() {
+        return new GenUniqueID();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SignIn }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "signIn")
     public JAXBElement<SignIn> createSignIn(SignIn value) {
         return new JAXBElement<SignIn>(_SignIn_QNAME, SignIn.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CheckRepudiation }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "checkRepudiation")
+    public JAXBElement<CheckRepudiation> createCheckRepudiation(CheckRepudiation value) {
+        return new JAXBElement<CheckRepudiation>(_CheckRepudiation_QNAME, CheckRepudiation.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GenUniqueIDResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "genUniqueIDResponse")
+    public JAXBElement<GenUniqueIDResponse> createGenUniqueIDResponse(GenUniqueIDResponse value) {
+        return new JAXBElement<GenUniqueIDResponse>(_GenUniqueIDResponse_QNAME, GenUniqueIDResponse.class, null, value);
     }
 
     /**
@@ -111,6 +165,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "SignOut")
     public JAXBElement<SignOut> createSignOut(SignOut value) {
         return new JAXBElement<SignOut>(_SignOut_QNAME, SignOut.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GenUniqueID }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "genUniqueID")
+    public JAXBElement<GenUniqueID> createGenUniqueID(GenUniqueID value) {
+        return new JAXBElement<GenUniqueID>(_GenUniqueID_QNAME, GenUniqueID.class, null, value);
     }
 
     /**
@@ -138,6 +201,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "signInResponse")
     public JAXBElement<SignInResponse> createSignInResponse(SignInResponse value) {
         return new JAXBElement<SignInResponse>(_SignInResponse_QNAME, SignInResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CheckRepudiationResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://healthcaresystem.me.org/", name = "checkRepudiationResponse")
+    public JAXBElement<CheckRepudiationResponse> createCheckRepudiationResponse(CheckRepudiationResponse value) {
+        return new JAXBElement<CheckRepudiationResponse>(_CheckRepudiationResponse_QNAME, CheckRepudiationResponse.class, null, value);
     }
 
 }

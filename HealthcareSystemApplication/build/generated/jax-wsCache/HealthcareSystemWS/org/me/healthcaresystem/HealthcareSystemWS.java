@@ -26,21 +26,21 @@ public interface HealthcareSystemWS {
 
     /**
      * 
-     * @param password
+     * @param cRId
      * @param username
      * @return
      *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "signIn", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.SignIn")
-    @ResponseWrapper(localName = "signInResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.SignInResponse")
-    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/signInRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/signInResponse")
-    public String signIn(
+    @RequestWrapper(localName = "checkRepudiation", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.CheckRepudiation")
+    @ResponseWrapper(localName = "checkRepudiationResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.CheckRepudiationResponse")
+    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/checkRepudiationRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/checkRepudiationResponse")
+    public String checkRepudiation(
         @WebParam(name = "username", targetNamespace = "")
         String username,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
+        @WebParam(name = "c_r_id", targetNamespace = "")
+        String cRId);
 
     /**
      * 
@@ -74,5 +74,38 @@ public interface HealthcareSystemWS {
         String expDate,
         @WebParam(name = "CVV", targetNamespace = "")
         String cvv);
+
+    /**
+     * 
+     * @param password
+     * @param username
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "signIn", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.SignIn")
+    @ResponseWrapper(localName = "signInResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.SignInResponse")
+    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/signInRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/signInResponse")
+    public String signIn(
+        @WebParam(name = "username", targetNamespace = "")
+        String username,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
+
+    /**
+     * 
+     * @param username
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "genUniqueID", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.GenUniqueID")
+    @ResponseWrapper(localName = "genUniqueIDResponse", targetNamespace = "http://healthcaresystem.me.org/", className = "org.me.healthcaresystem.GenUniqueIDResponse")
+    @Action(input = "http://healthcaresystem.me.org/HealthcareSystemWS/genUniqueIDRequest", output = "http://healthcaresystem.me.org/HealthcareSystemWS/genUniqueIDResponse")
+    public String genUniqueID(
+        @WebParam(name = "username", targetNamespace = "")
+        String username);
 
 }

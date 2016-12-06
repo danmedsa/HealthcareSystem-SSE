@@ -5,6 +5,11 @@
  */
 package org.me.healthcaresystem;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Arrays;
 
 /**
@@ -36,5 +41,41 @@ public class Security {
         }
         System.out.println("Decrypted data: " + String.valueOf(decrypted));
         return String.valueOf(decrypted);
+    }
+    
+    public String repudiate(String username, String repudiationUID){
+        try{ 
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+        }catch(ClassNotFoundException e){
+            System.out.println(e);
+        }
+
+        try{
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/HealthcareSystemDB");
+            Statement stmt = con.createStatement();
+            System.out.println("Connection Succeeded");
+
+            ResultSet rs = stmt.executeQuery("SELECT * FROM APP.USERS");
+
+        while (rs.next()) {
+            String user = rs.getString("USERNAME");
+            String r_id = rs.getString("RID");
+            System.out.println(user +" "+ r_id);
+
+            if(!user.equals("danielm")){
+                return "Payment Repudiated: Inconsistency Detected with Username";
+            }
+            if(!r_id.equals(repudiationUID)){
+                return "Payment Repudiated: Inconsistency Detected with RepudiationID";
+            }        
+        }
+        }catch(SQLException e){
+            System.err.println(e);
+                return "Error Accessing Database: ";
+        }             
+
+        return "Payment Succeeded";
+                
+          
     }
 }

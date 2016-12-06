@@ -15,6 +15,9 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
     /**
      * Creates new form HealthcareSystemGUI
      */
+    
+    Boolean Keylogger = false;
+    
     public HealthcareSystemGUI() {
         initComponents();
     }
@@ -33,6 +36,7 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
         username_txt = new javax.swing.JTextField();
         password_txt = new javax.swing.JTextField();
         signIn_btn = new javax.swing.JButton();
+        Keylogger_chk = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,24 +57,36 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
             }
         });
 
+        Keylogger_chk.setText("Keylogging");
+        Keylogger_chk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Keylogger_chkActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(username_lbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(username_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(username_lbl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(username_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(password_lbl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(password_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(53, 53, 53)
+                                .addComponent(signIn_btn))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(password_lbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(password_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(signIn_btn)))
+                        .addContainerGap()
+                        .addComponent(Keylogger_chk)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -86,7 +102,9 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
                     .addComponent(password_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(signIn_btn)
-                .addGap(56, 56, 56))
+                .addGap(18, 18, 18)
+                .addComponent(Keylogger_chk)
+                .addGap(15, 15, 15))
         );
 
         pack();
@@ -108,6 +126,18 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
        
        
     }//GEN-LAST:event_signIn_btnActionPerformed
+
+    private void Keylogger_chkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Keylogger_chkActionPerformed
+        // TODO add your handling code here:
+        if(!Keylogger_chk.isSelected()){
+            System.out.println("Key Logger is off");
+        }else{
+ 
+            System.out.println("Key Logger is on");
+
+        }
+        
+    }//GEN-LAST:event_Keylogger_chkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,6 +175,7 @@ public class HealthcareSystemGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox Keylogger_chk;
     private javax.swing.JLabel password_lbl;
     private javax.swing.JTextField password_txt;
     private javax.swing.JButton signIn_btn;

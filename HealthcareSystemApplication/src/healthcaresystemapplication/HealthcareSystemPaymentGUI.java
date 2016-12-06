@@ -1,5 +1,11 @@
 package healthcaresystemapplication;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,32 +21,35 @@ public class HealthcareSystemPaymentGUI extends javax.swing.JFrame {
     /**
      * Creates new form HealthcareSystemPaymentGUI
      */
+    
+    private String selected = "Cash";
+    
     public HealthcareSystemPaymentGUI() {
         initComponents();
         Address_2_lbl.setVisible(false);
-    address_1_lbl.setVisible(false);
-    address_1_txt.setVisible(false);
-    address_2_txt.setVisible(false);
-    amount_lbl.setVisible(true);
-    amount_txt.setVisible(true);
-    billing_address_lbl.setVisible(false);
-    cancel_btn.setVisible(true);
-    card_num_lbl.setVisible(false);
-    card_num_txt.setVisible(false);
-    cash_btn.setVisible(true);
-    check_btn.setVisible(true);
-    city_lbl.setVisible(false);
-    city_txt.setVisible(false);
-    cvv_lbl.setVisible(false);
-    cvv_txt.setVisible(false);
-    debit_credit_btn.setVisible(true);
-    exp_date_lbl.setVisible(false);
-    exp_date_txt.setVisible(false);
-    payment_btn.setVisible(true);
-    state_lbl.setVisible(false);
-    state_txt.setVisible(false);
-    zipcode_lbl.setVisible(false);
-    zipcode_txt.setVisible(false);
+        address_1_lbl.setVisible(false);
+        address_1_txt.setVisible(false);
+        address_2_txt.setVisible(false);
+        amount_lbl.setVisible(true);
+        amount_txt.setVisible(true);
+        billing_address_lbl.setVisible(false);
+        cancel_btn.setVisible(true);
+        card_num_lbl.setVisible(false);
+        card_num_txt.setVisible(false);
+        cash_btn.setVisible(true);
+        check_btn.setVisible(true);
+        city_lbl.setVisible(false);
+        city_txt.setVisible(false);
+        cvv_lbl.setVisible(false);
+        cvv_txt.setVisible(false);
+        debit_credit_btn.setVisible(true);
+        exp_date_lbl.setVisible(false);
+        exp_date_txt.setVisible(false);
+        payment_btn.setVisible(true);
+        state_lbl.setVisible(false);
+        state_txt.setVisible(false);
+        zipcode_lbl.setVisible(false);
+        zipcode_txt.setVisible(false);
     }
 
     /**
@@ -103,7 +112,7 @@ public class HealthcareSystemPaymentGUI extends javax.swing.JFrame {
 
         card_num_lbl.setText("Card Number:");
 
-        amount_lbl.setText("Amount: ");
+        amount_lbl.setText("Amount: $");
 
         amount_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -269,21 +278,47 @@ public class HealthcareSystemPaymentGUI extends javax.swing.JFrame {
 
     private void payment_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payment_btnActionPerformed
         // TODO add your handling code here:
-        Security sec = new Security();
         
-        if(card_num_txt.getText().length() > 0 || exp_date_txt.getText().length() > 0 || cvv_txt.getText().length() > 0){
-            String card_num_enc = sec.encrypt(card_num_txt.getText());
-            String exp_date_enc = sec.encrypt(exp_date_txt.getText());
-            String cvv_enc = sec.encrypt(cvv_txt.getText());
-            Boolean valid = validateCard(card_num_enc,exp_date_enc,cvv_enc);
-            if(valid == true){
-                new cardPopup("Card Approved!").setVisible(true);
-            }else{
-                new cardPopup("Card Declined!").setVisible(true);
-            }
-        }else{
-            new cardPopup("Missing Card info").setVisible(true);
+        String username = "danielm";
+        
+        Security sec = new Security();
+        switch(selected){
+            case "Card":
+                if(card_num_txt.getText().length() > 0 || exp_date_txt.getText().length() > 0 || cvv_txt.getText().length() > 0){
+                    String card_num_enc = sec.encrypt(card_num_txt.getText());
+                    String exp_date_enc = sec.encrypt(exp_date_txt.getText());
+                    String cvv_enc = sec.encrypt(cvv_txt.getText());
+                    Boolean valid = validateCard(card_num_enc,exp_date_enc,cvv_enc);
+                    if(valid == true){
+
+                        String repudiationUID = sec.genUniqueID(username);
+                        //TODO send compare
+                        String repudiation = sec.checkRepudiation(username, repudiationUID);
+                        System.out.println(repudiation);
+                        if(repudiation.equals("Payment Succeeded")){
+                            new cardPopup("Are you sure you want to pay: $" + amount_txt.getText()).setVisible(true);
+
+                        }else{
+                            new cardPopup(repudiation).setVisible(true);
+                        }               
+
+                    }else{
+                        new cardPopup("Card Declined!").setVisible(true);
+                    }
+                }else{
+                    new cardPopup("Missing Card info").setVisible(true);
+                }
+                break;
+                
+            case "Cash":
+                new cardPopup("Please Pay with Cashier").setVisible(true);
+                break;
+                
+            case "Check":
+                new cardPopup("Please send the Check to the Hospital").setVisible(true);
+                break;
         }
+        
         
         
         
@@ -297,30 +332,32 @@ public class HealthcareSystemPaymentGUI extends javax.swing.JFrame {
 
     private void cash_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cash_btnActionPerformed
         // TODO add your handling code here:
-    Address_2_lbl.setVisible(false);
-    address_1_lbl.setVisible(false);
-    address_1_txt.setVisible(false);
-    address_2_txt.setVisible(false);
-    amount_lbl.setVisible(true);
-    amount_txt.setVisible(true);
-    billing_address_lbl.setVisible(false);
-    cancel_btn.setVisible(true);
-    card_num_lbl.setVisible(false);
-    card_num_txt.setVisible(false);
-    cash_btn.setVisible(true);
-    check_btn.setVisible(true);
-    city_lbl.setVisible(false);
-    city_txt.setVisible(false);
-    cvv_lbl.setVisible(false);
-    cvv_txt.setVisible(false);
-    debit_credit_btn.setVisible(true);
-    exp_date_lbl.setVisible(false);
-    exp_date_txt.setVisible(false);
-    payment_btn.setVisible(true);
-    state_lbl.setVisible(false);
-    state_txt.setVisible(false);
-    zipcode_lbl.setVisible(false);
-    zipcode_txt.setVisible(false);
+        Address_2_lbl.setVisible(false);
+        address_1_lbl.setVisible(false);
+        address_1_txt.setVisible(false);
+        address_2_txt.setVisible(false);
+        amount_lbl.setVisible(true);
+        amount_txt.setVisible(true);
+        billing_address_lbl.setVisible(false);
+        cancel_btn.setVisible(true);
+        card_num_lbl.setVisible(false);
+        card_num_txt.setVisible(false);
+        cash_btn.setVisible(true);
+        check_btn.setVisible(true);
+        city_lbl.setVisible(false);
+        city_txt.setVisible(false);
+        cvv_lbl.setVisible(false);
+        cvv_txt.setVisible(false);
+        debit_credit_btn.setVisible(true);
+        exp_date_lbl.setVisible(false);
+        exp_date_txt.setVisible(false);
+        payment_btn.setVisible(true);
+        state_lbl.setVisible(false);
+        state_txt.setVisible(false);
+        zipcode_lbl.setVisible(false);
+        zipcode_txt.setVisible(false);
+        
+        selected = "Cash";
     }//GEN-LAST:event_cash_btnActionPerformed
 
     private void check_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_check_btnActionPerformed
@@ -349,6 +386,7 @@ public class HealthcareSystemPaymentGUI extends javax.swing.JFrame {
     state_txt.setVisible(false);
     zipcode_lbl.setVisible(false);
     zipcode_txt.setVisible(false);
+        selected = "Check";
     }//GEN-LAST:event_check_btnActionPerformed
 
     private void debit_credit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_debit_credit_btnActionPerformed
@@ -377,6 +415,7 @@ public class HealthcareSystemPaymentGUI extends javax.swing.JFrame {
     state_txt.setVisible(true);
     zipcode_lbl.setVisible(true);
     zipcode_txt.setVisible(true);
+    selected = "Card";
     }//GEN-LAST:event_debit_credit_btnActionPerformed
 
     /**
@@ -405,6 +444,7 @@ public class HealthcareSystemPaymentGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(HealthcareSystemPaymentGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

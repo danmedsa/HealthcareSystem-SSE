@@ -4,6 +4,14 @@
 
 <xs:element name="SignOutResponse" type="tns:SignOutResponse"/>
 
+<xs:element name="checkRepudiation" type="tns:checkRepudiation"/>
+
+<xs:element name="checkRepudiationResponse" type="tns:checkRepudiationResponse"/>
+
+<xs:element name="genUniqueID" type="tns:genUniqueID"/>
+
+<xs:element name="genUniqueIDResponse" type="tns:genUniqueIDResponse"/>
+
 <xs:element name="signIn" type="tns:signIn"/>
 
 <xs:element name="signInResponse" type="tns:signInResponse"/>
@@ -25,6 +33,19 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="checkRepudiation">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="c_r_id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkRepudiationResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="SignOut">
 <xs:sequence/>
 </xs:complexType>
@@ -32,6 +53,18 @@
 <xs:complexType name="SignOutResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="genUniqueID">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="genUniqueIDResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

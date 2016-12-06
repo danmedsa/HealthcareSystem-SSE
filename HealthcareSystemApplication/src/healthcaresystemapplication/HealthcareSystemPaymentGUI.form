@@ -204,7 +204,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="amount_lbl">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Amount: "/>
+        <Property name="text" type="java.lang.String" value="Amount: $"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="amount_txt">

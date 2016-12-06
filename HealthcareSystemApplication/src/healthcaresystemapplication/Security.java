@@ -34,5 +34,16 @@ public class Security {
         System.out.println("Decrypted data: " + String.valueOf(decrypted));
         return String.valueOf(decrypted);
     }
-    
+
+    public static String genUniqueID(java.lang.String username) {
+        org.me.healthcaresystem.HealthcareSystemWS_Service service = new org.me.healthcaresystem.HealthcareSystemWS_Service();
+        org.me.healthcaresystem.HealthcareSystemWS port = service.getHealthcareSystemWSPort();
+        return port.genUniqueID(username);
+    }
+ 
+    public static String checkRepudiation(java.lang.String username, java.lang.String cRId) {
+    org.me.healthcaresystem.HealthcareSystemWS_Service service = new org.me.healthcaresystem.HealthcareSystemWS_Service();
+    org.me.healthcaresystem.HealthcareSystemWS port = service.getHealthcareSystemWSPort();
+    return port.checkRepudiation(username, cRId);
+    }
 }
